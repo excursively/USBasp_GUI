@@ -1,0 +1,111 @@
+//      resource.rc
+//      
+//      Copyright 2009 Sataporn Saijai <nothing2give@gmail.com>
+//      
+//      This program is free software; you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation; either version 2 of the License, or
+//      (at your option) any later version.
+//      
+//      This program is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//      GNU General Public License for more details.
+//      
+//      You should have received a copy of the GNU General Public License
+//      along with this program; if not, write to the Free Software
+//      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+//      MA 02110-1301, USA.
+
+#ifndef RESOURCE_RC
+#define RESOURCE_RC
+
+#include "resource.h"
+
+IDD_MAIN_DIALOG DIALOGEX DISCARDABLE 100, 30, 250, 365
+//STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "USBasp GUI (Experiment only, not for daily use)"
+MENU IDR_MAIN_MENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Part",IDC_STATIC,12,14,14,8
+    COMBOBOX        IDC_COM_PARTLIST,36,12,150,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Find Part",IDC_BUT_FINDPART,192,11,50,14
+
+    GROUPBOX        "Fuses",IDC_STATIC,12,30,228,150
+    CONTROL         "CLKDIV8",IDC_HFUSE_BIT7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,54,43,10
+    CONTROL         "CKOUT",IDC_HFUSE_BIT6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,66,43,10
+    CONTROL         "SUT1",IDC_HFUSE_BIT5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,78,43,10
+    CONTROL         "SUT0",IDC_HFUSE_BIT4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,90,43,10
+    CONTROL         "CKSEL3",IDC_HFUSE_BIT3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,102,43,10
+    CONTROL         "CKSEL2",IDC_HFUSE_BIT2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,114,43,10
+    CONTROL         "CKSEL1",IDC_HFUSE_BIT1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,126,43,10
+    CONTROL         "CKSEL0",IDC_HFUSE_BIT0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,138,43,10    
+    CONTROL         "RSTDISBL",IDC_LFUSE_BIT7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,96,54,43,10
+    CONTROL         "DWEN",IDC_LFUSE_BIT6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,96,66,43,10
+    CONTROL         "SPIEN",IDC_LFUSE_BIT5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,96,78,43,10
+    CONTROL         "WDTON",IDC_LFUSE_BIT4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,96,90,43,10
+    CONTROL         "EESAVE",IDC_LFUSE_BIT3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,96,102,43,10
+    CONTROL         "BODLEVEL2",IDC_LFUSE_BIT2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,96,114,43,10
+    CONTROL         "BODLEVEL1",IDC_LFUSE_BIT1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,96,126,43,10
+    CONTROL         "BODLEVEL0",IDC_LFUSE_BIT0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,96,138,43,10    
+	CONTROL         "PSC2RB",IDC_EFUSE_BIT7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,168,54,43,10
+    CONTROL         "PSC1RB",IDC_EFUSE_BIT6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,168,66,43,10
+    CONTROL         "PSC0RB",IDC_EFUSE_BIT5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,168,78,43,10
+    CONTROL         "PSCRV",IDC_EFUSE_BIT4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,168,90,43,10
+    CONTROL         "BOOTSZ2",IDC_EFUSE_BIT3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,168,102,43,10
+    CONTROL         "BOOTSZ1",IDC_EFUSE_BIT2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,168,114,43,10
+    CONTROL         "BOOTSZ0",IDC_EFUSE_BIT1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,168,126,43,10
+    CONTROL         "BOOTRST",IDC_EFUSE_BIT0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,168,138,43,10
+    LTEXT           "HFUSE",IDC_STATIC,18,42,25,8
+    LTEXT           "LFUSE",IDC_STATIC,90,42,24,8
+    LTEXT           "EFUSE",IDC_STATIC,162,42,28,8
+    PUSHBUTTON      "Read",IDC_BUT_READFUSE,66,156,50,14
+    PUSHBUTTON      "Write",IDC_BUT_WRITEFUSE,138,156,50,14
+        
+    GROUPBOX        "HEX Flash",IDC_STATIC,12,186,228,72
+    PUSHBUTTON      "Choose",IDC_BUT_CHOOSE,18,198,50,14
+    PUSHBUTTON      "Erase",IDC_BUT_ERASE,18,216,50,14
+    PUSHBUTTON      "Program",IDC_BUT_PROGRAM,18,234,50,14
+    PUSHBUTTON      "Read",IDC_BUT_READFLASH,186,234,50,14
+    EDITTEXT        IDC_FILENAME,72,198,162,14,ES_AUTOHSCROLL | ES_READONLY
+
+    LTEXT           "AVRdude Log",IDC_STATIC,12,264,44,8
+    LISTBOX         IDC_AVRDUDELOG,12,276,228,66,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "USBasp GUI | www.dailyhabitats.com",IDC_STATIC,12,348,228,8
+END
+
+IDR_MAIN_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+    	//MENUITEM "&Load HEX file..", IDC_STATIC
+    	//MENUITEM "&Save HEX file..", IDC_STATIC
+        MENUITEM "E&xit", IDC_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About..", IDC_SHOW_ABOUT_BOX
+    END
+END
+
+IDD_ABOUT_DIALOG DIALOGEX DISCARDABLE 0, 0, 239, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About USBasp GUI"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+	DEFPUSHBUTTON "&OK", IDOK, 174, 18, 50, 14
+	GROUPBOX "About this program...", IDC_STATIC, 7, 7, 225, 52
+	CTEXT "An simple AVRDude frontend for using with USBasp programmer only\r\n\r\nby Sataporn S. (dailyhabitats@gmail.com)", IDC_STATIC,16,18,144,33
+END
+
+IDD_STATUS_DIALOG DIALOGEX DISCARDABLE 50, 100, 150, 30
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Processing.."
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+	CTEXT "Status", IDC_STATUS_TEXT, 10, 10, 130, 14
+END
+
+#endif
